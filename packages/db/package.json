@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "packageManager": "yarn@4.0.2",
+  "devDependencies": {
+    "@zenstackhq/cli": "^3.3.3"
+  },
+  "dependencies": {
+    "@zenstackhq/orm": "^3.3.3"
+  }
+}

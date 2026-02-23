@@ -2,3 +2,15 @@ target/
 .idea/
 **/*.rs.bk
 Cargo.lock
+node_modules
+
+.env
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.env
+local.db

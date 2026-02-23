@@ -1,0 +1,15 @@
+{
+  "projectName": "studio",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "yarn",
+  "includeExamples": false,
+  "tailwind": true,
+  "addOnOptions": {},
+  "envVarValues": {},
+  "git": false,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": ["biome", "nitro"]
+}

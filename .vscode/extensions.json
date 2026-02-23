@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "rust-lang.rust-analyzer",
+        "zenstack.zenstack-v3",
+        "biomejs.biome"
+    ]
+}

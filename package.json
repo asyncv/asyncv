@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "repository": "git@github.com:idealjs/mono-template.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.10",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "yarn@4.0.2",
+  "dependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260223.1"
+  }
+}
