@@ -1,0 +1,12 @@
+[package]
+name = "asyncv_service"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0"
+async-trait = "0.1"
+dotenvy = "0.15.7"
+aisdk = { version = "0.5.1", features = ["openai", "google"] }
+sea-orm = { version = "2.0.0-rc.34", features = [ "sqlx-sqlite", "runtime-tokio-rustls", "macros" ] }
+tokio = { version = "1.49.0", features = ["full"] }

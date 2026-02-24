@@ -10,5 +10,22 @@ plugin ts {
 
 /// Agent model
 model Agent {
-  id String @id @default(cuid())
+  id                    String               @id @default(cuid())
+  languageModelConfigId String?              @map("language_model_config_id")
+  // relation
+  languageModelConfig   LanguageModelConfig? @relation(fields: [languageModelConfigId], references: [id])
+
+  @@map("agent")
+}
+
+model LanguageModelConfig {
+  id           String   @id @default(cuid())
+  name         String
+  apiKey       String   @map("api_key")
+  modelName    String   @map("model_name")
+  providerName String   @map("provider_name")
+  Agent        Agent[]
+  createdAt    DateTime
+
+  @@map("language_model_config")
 }

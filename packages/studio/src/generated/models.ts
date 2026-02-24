@@ -11,3 +11,4 @@ import { type ModelResult as $ModelResult } from "@zenstackhq/orm";
  * Agent model
  */
 export type Agent = $ModelResult<$Schema, "Agent">;
+export type LanguageModelConfig = $ModelResult<$Schema, "LanguageModelConfig">;

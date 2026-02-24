@@ -12,3 +12,4 @@ export const db = new ZenStackClient(schema, {
     database: new SQLite(process.env.DATABASE_URL),
   }),
 });
+

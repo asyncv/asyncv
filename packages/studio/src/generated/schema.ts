@@ -20,8 +20,75 @@ export class SchemaType implements SchemaDef {
                     id: true,
                     attributes: [{ name: "@id" }, { name: "@default", args: [{ name: "value", value: ExpressionUtils.call("cuid") }] }],
                     default: ExpressionUtils.call("cuid")
+                },
+                languageModelConfigId: {
+                    name: "languageModelConfigId",
+                    type: "String",
+                    optional: true,
+                    attributes: [{ name: "@map", args: [{ name: "name", value: ExpressionUtils.literal("language_model_config_id") }] }],
+                    foreignKeyFor: [
+                        "languageModelConfig"
+                    ]
+                },
+                languageModelConfig: {
+                    name: "languageModelConfig",
+                    type: "LanguageModelConfig",
+                    optional: true,
+                    attributes: [{ name: "@relation", args: [{ name: "fields", value: ExpressionUtils.array("String", [ExpressionUtils.field("languageModelConfigId")]) }, { name: "references", value: ExpressionUtils.array("String", [ExpressionUtils.field("id")]) }] }],
+                    relation: { opposite: "Agent", fields: ["languageModelConfigId"], references: ["id"] }
                 }
             },
+            attributes: [
+                { name: "@@map", args: [{ name: "name", value: ExpressionUtils.literal("agent") }] }
+            ],
+            idFields: ["id"],
+            uniqueFields: {
+                id: { type: "String" }
+            }
+        },
+        LanguageModelConfig: {
+            name: "LanguageModelConfig",
+            fields: {
+                id: {
+                    name: "id",
+                    type: "String",
+                    id: true,
+                    attributes: [{ name: "@id" }, { name: "@default", args: [{ name: "value", value: ExpressionUtils.call("cuid") }] }],
+                    default: ExpressionUtils.call("cuid")
+                },
+                name: {
+                    name: "name",
+                    type: "String"
+                },
+                apiKey: {
+                    name: "apiKey",
+                    type: "String",
+                    attributes: [{ name: "@map", args: [{ name: "name", value: ExpressionUtils.literal("api_key") }] }]
+                },
+                modelName: {
+                    name: "modelName",
+                    type: "String",
+                    attributes: [{ name: "@map", args: [{ name: "name", value: ExpressionUtils.literal("model_name") }] }]
+                },
+                providerName: {
+                    name: "providerName",
+                    type: "String",
+                    attributes: [{ name: "@map", args: [{ name: "name", value: ExpressionUtils.literal("provider_name") }] }]
+                },
+                Agent: {
+                    name: "Agent",
+                    type: "Agent",
+                    array: true,
+                    relation: { opposite: "languageModelConfig" }
+                },
+                createdAt: {
+                    name: "createdAt",
+                    type: "DateTime"
+                }
+            },
+            attributes: [
+                { name: "@@map", args: [{ name: "name", value: ExpressionUtils.literal("language_model_config") }] }
+            ],
             idFields: ["id"],
             uniqueFields: {
                 id: { type: "String" }
