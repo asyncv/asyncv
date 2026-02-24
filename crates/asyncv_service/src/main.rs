@@ -1,11 +1,9 @@
-use sea_orm::{Database, DatabaseConnection, DerivePartialModel, EntityTrait, RelationTrait};
+use sea_orm::{Database, DatabaseConnection, EntityTrait};
 use std::future;
 
 pub mod agent;
 mod bot;
 mod entity;
-
-
 
 async fn init_agents<B, F>(
     db: &DatabaseConnection,
